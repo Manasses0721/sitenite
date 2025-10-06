@@ -7,7 +7,7 @@ body{
     margin: 0;
 }
 .container{
-    padding: 70px 0;
+    padding: 40px 0;
 }
 p, li{
     color:#444;
@@ -589,7 +589,7 @@ body {
   left: -250px; /* começa escondido */
   background-color: #004080;
   transition: 0.3s;
-  padding-top: 0px;
+  padding-top: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.3);
   z-index: 1000;
 }
