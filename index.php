@@ -7,51 +7,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nite-Núcleo de inovação</title>
   <!-- Fonte -->
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-  
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./components/noticia.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <!-- Navbar -->
-  <header>
-   <div class="container" id="nav-container">
-      <?php
-       include('navbar.php');
-      ?>
-  </header>
-  <!-- Troca da parte principal -->
-  <main>
-    <?php
-      $trocas = $_GET['trocas'] ?? 'home'; // padrão é "home"
-      $arquivo = "trocas/{$trocas}.php";
+  <main class="min-h-screen flex flex-col p-4 ">
+    <?php include 'navbar.php'; ?>
+    <!-- Conteúdo da página -->
+    <main>
+      <div style="width: 100%; height:400px; background-color: #0d6efd;">
+        ola
+      </div>
+      <section class="grid-section">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+      </section>
+      <section class="latest-news">
+        <h1>ultimas noticias</h1>
+        <section class="conteiner">
+          <?php include 'components/noticia.php'; ?>
+          <?php include 'components/noticia.php'; ?>
+          <?php include 'components/noticia.php'; ?>
+          <?php include 'components/noticia.php'; ?>
+        </section>
+      </section>
+    </main>
+    <section class="conteiner-about">
+      <h2>Sobre nós</h2>
+      <div class="d-flex mt-4 gap-4">
+        <figcaption>
+          <div class="fig">
+            k
+          </div>
+        </figcaption>
+        <aside>
 
-      if (file_exists($arquivo)) {
-        include $arquivo;
-      } else {
-        echo "<h2>Página não encontrada</h2><p>A página solicitada não existe.</p>";
-      }
-    ?>
+          <div>
+            <h3>Uma empresa que pensa no futuro</h3>
+            <p>
+              Uma empresa que pensa no futuro
+              Nossos projetos são adaptados ao cliente e seu propósito.
+              Contamos com empresas parceiras que nos ajudam a entregar soluções inovadoras
+            </p>
+            <h5>
+              Veja outros diferenciais:
+            </h5>
+            <ul>
+              <li> Propostas inovadoras</li>
+              <li> Projetos com ótimos custos</li>
+              <li> Integração com diversos sistemas do mercado</li>
+              <li> Acesso direto a talentos em formação</li>
+              <li> Desenvolvimento com metodologia ágil</li>
+            </ul>
+          </div>
+        </aside>
+    </section>
+    </div>
+
   </main>
-  <!-- Rodapé -->
-  <footer>
-      <?php
-         include('footer.php');
-       ?>
-  </footer>
-  <!-- Scripts do projeto -->
-  <script src="https://kit.fontawesome.com/f11ceb98c0.js" crossorigin="anonymous"></script>
-  <!-- Progress Bar-->
-  <script src="js/progressbar.min.js"></script>
-  <!-- Parallax-->
-  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
 </body>
+<script src="https://kit.fontawesome.com/f11ceb98c0.js" crossorigin="anonymous"></script>
+<!-- Progress Bar-->
+<script src="js/progressbar.min.js"></script>
+<!-- Parallax-->
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+  crossorigin="anonymous"></script>
+<script src="js/scripts.js"></script>
 
 </html>
