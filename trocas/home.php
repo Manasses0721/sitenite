@@ -1,5 +1,5 @@
   <main> 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
      <!-- Seção "Sobre a NITE" -->
     <div id="about-area">
       <div class="container">

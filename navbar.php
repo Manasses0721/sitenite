@@ -1,6 +1,6 @@
 <!-- Barra de navegação -->
   <link rel="stylesheet" href="css/style.css">
-    <div class="container" id="nav-container">
+    <div class="container p-8 " id="nav-container">
       <nav class="navbar shadow-sm navbar-expand-lg fixed-top">
         <!--Logo do NITE-->
             <!-- Imagem para abrir/fechar -->
