@@ -5,5 +5,6 @@
     define('PASS', 'Lego12?');
     define('BASE', 'dbnite');
 
-    $conn = new mysqli(HOST, USER, PASS, BASE);
-    
+    $conn = new mysqli(HOST, USER, PASS, BASE); 
+
+   

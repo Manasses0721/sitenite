@@ -54,7 +54,7 @@
 
 <div class="card-header">
     <h4>
-        Lista de Funcionários
+         Lista de Funcionários
         <a class="btn btn-primary" >Novo Funcionário</a>
     </h4>
     <table class="table table-striped">
