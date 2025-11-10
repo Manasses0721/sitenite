@@ -43,7 +43,7 @@
             </div>
         </form>
         <div>
-            <p class="text-center mt-4">Não tem uma conta? <a href="./pages/cadastrar.html">Registre-se</a></p>
+            <p class="text-center mt-4">Não tem uma conta? <a href="./pages/cadastrar.php">Registre-se</a></p>
         </div>
     </main>
 
