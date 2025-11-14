@@ -12,7 +12,7 @@
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
-    <main class="w-50 container bg-white rounded shadow p-5">
+    <main class="w-50 container flex flex-column gap  rounded mt-5 pt-5">
 
         <div class="text-center mb-4">
             <img style="width: 100px;" src="/img/simb_nite-removebg-preview_1.svg" alt="">
@@ -52,7 +52,7 @@
 
             // Prepared statement para segurança
             $stmt = $conn->prepare("INSERT INTO tbusuarios (nome, email, senha) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $nome, $email, $senhaHash);
+            $stmt->bind_param("sss", $nome, $email, $senha);
 
             if ($stmt->execute()) {
                 echo "<div class='alert alert-success mt-4'>Usuário cadastrado com sucesso!</div>";

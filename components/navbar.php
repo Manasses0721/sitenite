@@ -13,7 +13,7 @@
   <div class=" d-flex align-items-center gap-4 p-4 " id="nav-container">
 
     <div class="d-flex gap-3 align-items-center">
-      <a href="../login.php" class="text-primary" id="login-menu">Entrar</a>
+      <a href="../pages/login.php" class="text-primary" id="login-menu">Entrar</a>
       <?php $text="cadastro"; include 'button.php'; ?>
     </div>
   </div>
