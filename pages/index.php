@@ -22,7 +22,7 @@
     <!-- Conteúdo da página -->
     <main>
       <div style="width: 100%; height:400px; background-color: #D0D0D08F;">
-        NITE
+        <img src="../img/Frame 2.png" alt="Banner Nite" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <section class="grid-section">
         <div class="div1"></div>

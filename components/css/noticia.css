@@ -1,9 +1,13 @@
 .noticia { 
     width: 100%;
+
 }
 .news-image {
     width: 200px;
     height: 200px;
+}
+.conteiner {
+    margin-top: 5rem;
 }
 .news-image > img {
     width: 100%;
