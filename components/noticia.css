@@ -1,15 +1,15 @@
 .noticia { 
-    width: 100%;
+    width: 50%;
 }
 .news-image {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
 }
 .conteiner {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 .news-image > img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: cover;
 }
