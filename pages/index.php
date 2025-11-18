@@ -43,7 +43,8 @@
       <h2>Sobre nós</h2>
       <div class="d-flex mt-4 gap-4">
         <figcaption>
-          <div class="fig">
+          <div class="">
+            <img src="../img/edficare.jpg" class="fig" alt="">
           </div>
         </figcaption>
         <aside>
