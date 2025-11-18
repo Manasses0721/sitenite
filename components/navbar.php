@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet" href="css/style.css">
 
 <div class="w-full px-4 shadow bg-transparent blur-5 d-flex justify-content-between rounded" id="navbar-links">
   <div class=" d-flex gap-2 align-items-center" style="width: 80px; height: 80px;">
@@ -14,7 +14,7 @@
 
     <div class="d-flex gap-3 align-items-center">
       <a href="../pages/login.php" class="text-primary" id="login-menu">Entrar</a>
-      <?php $text="cadastro"; include 'button.php'; ?>
+      <?php $text="cadastro"; $src="../pages/cadastrar.php"; include 'button.php'; ?>
     </div>
   </div>
 

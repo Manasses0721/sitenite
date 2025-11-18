@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../components/noticia.css">
 </head>
 <body>
-  <!-- <link rel="stylesheet" href="css/style.css"> -->
 
     <div class="w-full px-4 shadow bg-transparent blur-5 d-flex justify-content-between rounded" id="navbar-links">
          <div class=" d-flex gap-2 align-items-center" style="width: 80px; height: 80px;">

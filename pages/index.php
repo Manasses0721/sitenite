@@ -13,7 +13,7 @@
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="../components/css/style.css">
     <link rel="stylesheet" href="../components/css/home.css">
-    <link rel="stylesheet" href="../components/noticia.css">
+    <link rel="stylesheet" href="../components/css/noticia.css">
 </head>
 
 <body>
@@ -31,13 +31,19 @@
       </section>
       <section class="latest-news">
         <h1>Ultimas noticias</h1>
-        <section class="conteiner">
+        
+          <div class="conteiner">
           <?php  $titulo="Notícia 1" ; $descricao="Descrição da Notícia 1"; include '../components/noticia.php'; ?>
+          </div>
+          <div class="conteiner">
           <?php  $titulo="Notícia 2" ; $descricao="Descrição da Notícia 2"; include '../components/noticia.php'; ?>
+          </div>
+          <div class="conteiner">
           <?php  $titulo="Notícia 3" ; $descricao="Descrição da Notícia 3"; include '../components/noticia.php'; ?>
+          </div>
+          <div class="conteiner">
           <?php  $titulo="Notícia 4" ; $descricao="Descrição da Notícia 4"; include '../components/noticia.php'; ?>
-        </section>
-      </section>
+          </div>
     </main>
     <section class="conteiner-about">
       <h2>Sobre nós</h2>

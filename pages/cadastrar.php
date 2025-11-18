@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../components/css/style.css"
+    <link rel="stylesheet" href="../components/css/home.css">>
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
+     <main class="min-h-screen flex flex-col p-4 ">
+    <?php include '../components/navbar.php'; ?>
+    <!-- Conteúdo da página -->
+    </main>
     <main class="w-50 container flex flex-column gap  rounded mt-5 pt-5">
 
         <div class="text-center mb-4">
