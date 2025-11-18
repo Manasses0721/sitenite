@@ -8,7 +8,7 @@
      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
    <link rel="stylesheet" href="../components/css/style.css">
    <link rel="stylesheet" href="../components/css/home.css">
-   <link rel="stylesheet" href="../components/noticia.css">
+    <link rel="stylesheet" href="../components/css/empresa.css">
    <div class="container" id="nav-container">
  </head>
  <body>
@@ -24,69 +24,19 @@
        </button>
      </header>
      <div class="container my-5">
-       <div class="row g-4">
+       <div class="section d-flex w-100 gap-4">
          <!--Edificare-->
-         <div class=" col-12 col-md-6">
-           <div class="card p-3 text-center d-flex" style="height: 362px; width: 491px;">
-
-             <img src="img/edificare.jpg" class="card-img-top" alt="...">
-             <div class="card-body">
-               <h5 class="card-title">Edificare </h5>
-               <p class="card-text">Texto ou descrição.</p>
-             </div>
-           </div>
-         </div>
-       </div>
+        <?php  $nome="Edificare";include '../components/empresa.php'; ?>
        <!--Seeds-->
-       <div class=" col-12 col-md-6">
-         <div class="card p-3 text-center d-flex" style="height: 362px; width: 491px;">
-           <img src="img.img/edificio.jpg" class="card-img-top" alt="...">
-           <div class="card-body">
-             <h5 class="card-title">Seeds</h5>
-             <p class="card-text">Texto ou descrição.</p>
-           </div>
-         </div>
-       </div>
-     </div>
-     <!--Faro-->
-     <div class=" col-12 col-md-6">
-       <div class="card p-3 text-center d-flex" style="height: 362px; width: 491px;">
-         <img src="img.img/edificio.jpg" class="card-img-top" alt="...">
-         <div class="card-body">
-           <h5 class="card-title">Faro
-           </h5>
-           <p class="card-text">Texto ou descrição.</p>
-         </div>
-       </div>
-     </div>
-     <!--Fonatec-->
-     <div class=" col-12 col-md-6">
-       <div class="card p-3 text-center d-flex" style="height: 362px; width: 491px;">
-         <img src="img.img/edificio.jpg" class="card-img-top" alt="...">
-         <div class="card-body">
-           <h5 class="card-title">Fonatec</h5>
-           <p class="card-text">Texto ou descrição.</p>
-         </div>
-       </div>
-     </div>
-     <!--Valor-->
-     <div class=" col-12 col-md-6">
-       <div class="card p-3 text-center d-flex" style="height: 362px; width: 491px;">
-         <img src="img.img/edificio.jpg" class="card-img-top" alt="...">
-         <div class="card-body">
-           <h5 class="card-title">Valor</h5>
-           <p class="card-text">Texto ou descrição.</p>
-         </div>
-       </div>
-     </div>
-     <!--Psico-->
-     <div class=" col-12 col-md-6">
-       <div class="card p-3 text-center d-flex" style="height: 362px; width: 491px;">
-         <img src="img.img/edificio.jpg" class="card-img-top" alt="...">
-         <div class="card-body">
-           <h5 class="card-title">Psico</h5>
-           <p class="card-text">Texto ou descrição.</p>
-         </div>
+        <?php  $nome="Seeds";include '../components/empresa.php'; ?>
+        
+        <?php $nome="Fonatec";include '../components/empresa.php'; ?>
+
+        <?php $nome="Faro";include '../components/empresa.php'; ?>
+
+        <?php $nome="Valor";include '../components/empresa.php'; ?>
+
+        <?php $nome="Psico";include '../components/empresa.php'; ?>
        </div>
      </div>
      </div>

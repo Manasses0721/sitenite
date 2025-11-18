@@ -1,8 +1,11 @@
 <section class="noticia">
+
+    <div class="d-flex gap-4 align-items-center">
+
     <link rel="stylesheet" href="noticia.css">
     <div class="d-flex gap-4">
         <div class="news-image">
-            <img src="../img/simb_nite-removebg-preview_1.svg" class="img" alt="">
+            <img src="../img/<?php echo htmlspecialchars($titulo); ?>.jpg" class="img" alt="<?php echo htmlspecialchars($titulo); ?>">
         </div>
         <article>
             <h1>

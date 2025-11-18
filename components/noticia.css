@@ -5,11 +5,14 @@
     width: 100px;
     height: 100px;
 }
+
+
 .conteiner {
     margin-top: 3rem;
-}
-.news-image > img {
+
+
     width: 50%;
     height: 50%;
     object-fit: cover;
+
 }
