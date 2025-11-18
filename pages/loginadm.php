@@ -7,36 +7,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST['nome'];
     $senhaDigitada = $_POST['senha'];
 
-    // Buscar usuário pelo nome
-    $stmt = $conn->prepare("SELECT idtbUsuarios, nome, senha FROM tbusuarios WHERE nome = ?");
+    // =======================
+    // 1️⃣ TENTAR LOGIN COMO ADMIN
+    // =======================
+    // 🔴 ATENÇÃO: Ajuste o nome da tabela e coluna abaixo
+    $stmt = $conn->prepare("SELECT id, nome, senha FROM tbadmin WHERE nome = ?");
     $stmt->bind_param("s", $nome);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    
     if ($resultado->num_rows === 1) {
-        $usuario = $resultado->fetch_assoc();
+        $admin = $resultado->fetch_assoc();
 
-        // 🔓 Comparação SEM HASH
-        if ($senhaDigitada === $usuario['senha']) {
+        if ($senhaDigitada === $admin['senha']) {
 
-            // Criar sessão
-            $_SESSION['id'] = $usuario['idtbUsuarios'];
-            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['id'] = $admin['id'];
+            $_SESSION['nome'] = $admin['nome'];
+            $_SESSION['tipo'] = "admin";
 
-            // Redireciona para a página inicial
-            header("Location: index.php");
+            header("Location: admin/gestao.php"); // Página exclusiva admin
             exit;
-
-        } else {
-            $erro = "Senha incorreta!";
         }
-    } else {
-        $erro = "Usuário não encontrado!";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,14 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
 
-    <main class="w-50 container flex flex-column gap  rounded mt-5 pt-5">
+    <main class="w-50 container flex flex-column gap rounded mt-5 pt-5">
 
         <div class="text-center mb-4">
             <img style="width: 100px;" src="/img/simb_nite-removebg-preview_1.svg" alt="">
             <h2 class="fw-bold">Nite</h2>
+            <h5>ADMIN</h5>
         </div>
 
-        <!-- Formulário corrigido -->
         <form action="" method="POST" class="p-4">
 
             <div class="input-group mb-3">
@@ -80,21 +74,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </form>
 
-        <!-- Mensagem de erro -->
         <?php if (!empty($erro)): ?>
             <div class="alert alert-danger text-center">
                 <?= $erro ?>
             </div>
         <?php endif; ?>
+
         <div class="text-center mt-4">
-            <p>Para adminstrador <a href="loginadm.php">Administrador</a></p>
-        </div>
-        <div class="text-center mt-4">
-            <p>Não tem uma conta? <a href="cadastrar.php">Registre-se</a></p>
+            <p>Para usuario <a href="login.php">Usuario</a></p>
         </div>
 
     </main>
 
 </body>
-
 </html>
