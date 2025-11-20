@@ -13,7 +13,7 @@
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="../components/css/style.css">
     <link rel="stylesheet" href="../components/css/home.css">
-    <link rel="stylesheet" href="../components/noticia.css">
+    <link rel="stylesheet" href="../components/css/noticia.css">
 </head>
 
 <body>
@@ -43,9 +43,9 @@
       <h2>Sobre nós</h2>
       <div class="d-flex mt-4 gap-4">
         <figcaption>
-          <div class="">
-            <img src="../img/edficare.jpg" class="fig" alt="">
-          </div>
+        <div class="fig">
+          <img src="../img/Group.png" alt="Nite">
+        </div>  
         </figcaption>
         <aside>
           <div>
@@ -59,17 +59,37 @@
               Veja outros diferenciais:
             </h5>
             <ul>
-              <li> Propostas inovadoras</li>
-              <li> Projetos com ótimos custos</li>
-              <li> Integração com diversos sistemas do mercado</li>
-              <li> Acesso direto a talentos em formação</li>
-              <li> Desenvolvimento com metodologia ágil</li>
+              <li> Propostas inovadoras</li>
+              <li> Projetos com ótimos custos</li>
+              <li> Integração com diversos sistemas do mercado</li>
+              <li> Acesso direto a talentos em formação</li>
+              <li> Desenvolvimento com metodologia ágil</li>
             </ul>
-          </div>
+        </div>
         </aside>
     </section>
-    </div>
+              </div>
+              <!-- Rodapé -->
+  <footer class="mt-5 pt-5">
+    <div id="copy-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" id="msg-box">
+            <p>Nos deixe uma mensagem:</p>
+          </div>
 
+          <div class="col-md-6" id="contact-form">
+              <form action="salvar_mensagem.php" method="POST">
+              <input type="email" class="form-control mb-2" placeholder="E-mail" name="email" required />
+              <input type="text" class="form-control mb-2" placeholder="Assunto" name="subject" required />
+              <textarea class="form-control mb-2" rows="3" placeholder="Sua mensagem..." name="message" required></textarea>
+              <input type="submit" class="btn btn-primary" value="Enviar" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
   </main>
 </body>
 <script src="https://kit.fontawesome.com/f11ceb98c0.js" crossorigin="anonymous"></script>
