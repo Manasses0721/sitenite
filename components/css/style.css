@@ -1,7 +1,11 @@
 .fig {
   height:350px;
   width: 350px;
+<<<<<<< HEAD
   background: white;
+=======
+  background: #0008ee;
+>>>>>>> 0789c92ab9daf9403fb982d1bf7a75b1d02f99d8
 }
 p {
   width: auto;

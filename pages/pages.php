@@ -25,13 +25,21 @@
     </section>
     <section class="latest-news">
       <h1>Ultimas noticias</h1>
-      <section class="conteiner">
+      <div class="conteiner">
         <?php $titulo = "Notícia 1"; $descricao ="Descrição da Notícia 1";$img="Notícia 1.jpg"; include '../components/noticia.php'; ?>
+        </div>
+        <div class="conteiner">
         <?php $titulo = "Notícia 2"; $descricao = "Descrição da Notícia 2";$img="Notícia 2.jpg"; include '../components/noticia.php'; ?>
+        </div>
+        <div class="conteiner">
         <?php $titulo = "Notícia 3"; $descricao = "Descrição da Notícia 3";$img="Notícia 3.jpg"; include '../components/noticia.php'; ?>
+        </div>
+        <div class="conteiner">
         <?php $titulo = "Notícia 4"; $descricao = "Descrição da Notícia 4";$img="Notícia 4.jpg"; include '../components/noticia.php'; ?>
+        </div>
+        <div class="conteiner">
        <?php $titulo = "Notícia 1"; $descricao = "Descrição da Notícia 5";$img="Notícia 1.jpg"; include '../components/noticia.php'; ?>
-      </section>
+        </div>
     </section>
     <section class="conteiner-about">
     </section>
