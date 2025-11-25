@@ -19,7 +19,6 @@
 <body>
   <main class="min-h-screen flex flex-col p-4 ">
     <?php include '../components/navbar.php'; ?>
-    <!-- Conteúdo da página -->
     <main>
       <div style="width: 100%; height:400px; background-color: #D0D0D08F;">
         <img src="../img/Frame 2.png" alt="Banner Nite" style="width:100%; height:100%; object-fit:cover;">

@@ -87,12 +87,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         <?php endif; ?>
         <div class="text-center mt-4">
-            <p>Para adminstrador <a href="loginadm.php">Administrador</a></p>
+            <p>Para adminstrador ou colaborador <a href="loginadm.php">Administrador</a> ou <a href="logincl.php">Colaborador</a></p>
         </div>
         <div class="text-center mt-4">
             <p>Não tem uma conta? <a href="cadastrar.php">Registre-se</a></p>
         </div>
-
+        <div class="text-center mt-4">
+            <p>Para voltar ao inicio <a href="index.php">Home</a></p>
+        </div>
     </main>
 
 </body>

@@ -1,32 +1,39 @@
 <?php
 session_start();
-include("../conexao.php"); // ajuste o caminho se necessário
+include("../conexao.php");
+
+$erro = ""; // <-- mensagem de erro
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $nome = $_POST['nome'];
     $senhaDigitada = $_POST['senha'];
 
-    // =======================
-    // 1️⃣ TENTAR LOGIN COMO ADMIN
-    // =======================
-    // 🔴 ATENÇÃO: Ajuste o nome da tabela e coluna abaixo
-    $stmt = $conn->prepare("SELECT id, nome, senha FROM tbadmin WHERE nome = ?");
-    $stmt->bind_param("s", $nome);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
+    if (empty($nome) || empty($senhaDigitada)) {
+        $erro = "Preencha todos os campos!";
+    } else {
+        
+        // Buscar usuário
+        $stmt = $conn->prepare("SELECT idtbColaborador, nome, senha FROM tbcolaborador WHERE nome = ?");
+        $stmt->bind_param("s", $nome);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
 
-    if ($resultado->num_rows === 1) {
-        $admin = $resultado->fetch_assoc();
+        if ($resultado->num_rows === 1) {
+            $usuario = $resultado->fetch_assoc();
 
-        if ($senhaDigitada === $admin['senha']) {
+            if ($senhaDigitada === $usuario['senha']) {
+                $_SESSION['idtbColaborador'] = $usuario['idtbColaborador'];
+                $_SESSION['nome'] = $usuario['nome'];
 
-            $_SESSION['id'] = $admin['id'];
-            $_SESSION['nome'] = $admin['nome'];
-            $_SESSION['tipo'] = "admin";
+                header("Location: colaborador/noticias.php");
+                exit;
+            } else {
+                $erro = "Senha incorreta!";
+            }
 
-            header("Location: admin/gestao.php"); // Página exclusiva admin
-            exit;
+        } else {
+            $erro = "Usuário não encontrado!";
         }
     }
 }
@@ -51,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="text-center mb-4">
             <img style="width: 100px;" src="/img/simb_nite-removebg-preview_1.svg" alt="">
             <h2 class="fw-bold">Nite</h2>
-            <h5>ADMIN</h5>
+            <h5>Colaborador</h5>
         </div>
 
         <form action="" method="POST" class="p-4">
