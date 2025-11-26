@@ -1,3 +1,19 @@
+<?php
+include("../conexao.php");
+
+// Buscar todas as notícias
+$sql = "SELECT * FROM tbnoticias ORDER BY data DESC";
+$result = $conn->query($sql);
+
+// Criar array com todas as notícias
+$noticias = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $noticias[] = $row;
+    }
+}
+?>
 <!-- Pagina inicial -->
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,24 +43,32 @@
         <div class="div1"></div>
         <div class="div2"></div>
         <div class="div3"></div>
-      </section>
-      <section class="latest-news">
-        <h1>Ultimas noticias</h1>
-        
-          <div class="conteiner">
-          <?php  $titulo="Notícia 1" ; $descricao="Descrição da Notícia 1"; include '../components/noticia.php'; ?>
-          </div>
-          <div class="conteiner">
-          <?php  $titulo="Notícia 2" ; $descricao="Descrição da Notícia 2"; include '../components/noticia.php'; ?>
-          </div>
-          <div class="conteiner">
-          <?php  $titulo="Notícia 3" ; $descricao="Descrição da Notícia 3"; include '../components/noticia.php'; ?>
-          </div>
-          <div class="conteiner">
-          <?php  $titulo="Notícia 4" ; $descricao="Descrição da Notícia 4"; include '../components/noticia.php'; ?>
-          </div>
-    </main>
-    <section class="conteiner-about">
+    </section>
+    <section class="latest-news">
+      <h1>Últimas notícias</h1>
+
+      <?php if (count($noticias) > 0): ?>
+    
+      <?php foreach ($noticias as $row): ?>
+      <div class="conteiner">
+
+        <img src="../pages/colaborador/uploads/<?= $row['imagem'] ?>" width="300">
+
+        <h2><?= $row['titulo'] ?></h2>
+
+        <p><?= $row['conteudo'] ?></p>
+
+        <small><strong>Autor:</strong> <?= $row['autor'] ?></small><br>
+        <small><strong>Data:</strong> <?= $row['data'] ?></small>
+
+      </div>
+      <?php endforeach; ?>
+
+      <?php else: ?>
+     <p>Nenhuma notícia cadastrada.</p>
+      <?php endif; ?>
+    </section>
+</main>
       <h2>Sobre nós</h2>
       <div class="d-flex mt-4 gap-4">
         <figcaption>

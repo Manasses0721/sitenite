@@ -35,31 +35,30 @@ if ($result->num_rows > 0) {
     <?php include '../components/navbar.php'; ?>
     <main>
     <section class="latest-news">
-      <h1>Últimas notícias</h1>
+  <h1>Últimas notícias</h1>
 
-      <?php if (count($noticias) > 0): ?>
-      
-        <?php foreach ($noticias as $row): ?>
-          <div class="conteiner">
+  <?php if (count($noticias) > 0): ?>
+    
+    <?php foreach ($noticias as $row): ?>
+      <div class="conteiner">
 
-            <!-- CORRIGIDO: caminho correto da imagem -->
-            <img src="colaborador/uploads/<?= $row['imagem'] ?>" width="300">
+        <img src="../pages/colaborador/uploads/<?= $row['imagem'] ?>" width="300">
 
+        <h2><?= $row['titulo'] ?></h2>
 
-            <h2><?= $row['titulo'] ?></h2>
+        <p><?= $row['conteudo'] ?></p>
 
-            <p><?= $row['conteudo'] ?></p>
+        <small><strong>Autor:</strong> <?= $row['autor'] ?></small><br>
+        <small><strong>Data:</strong> <?= $row['data'] ?></small>
 
-            <small><strong>Autor:</strong> <?= $row['autor'] ?></small><br>
-            <small><strong>Data:</strong> <?= $row['data'] ?></small>
-          </div>
-        <?php endforeach; ?>
+      </div>
+    <?php endforeach; ?>
 
-      <?php else: ?>
-        <p>Nenhuma notícia cadastrada.</p>
-      <?php endif; ?>
+  <?php else: ?>
+    <p>Nenhuma notícia cadastrada.</p>
+  <?php endif; ?>
+</section>
 
-    </section>
 
     </main>
   </main>
