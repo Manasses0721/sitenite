@@ -7,10 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST['nome'];
     $senhaDigitada = $_POST['senha'];
 
-    // =======================
-    // 1️⃣ TENTAR LOGIN COMO ADMIN
-    // =======================
-    // 🔴 ATENÇÃO: Ajuste o nome da tabela e coluna abaixo
+   
     $stmt = $conn->prepare("SELECT id, nome, senha FROM tbadmin WHERE nome = ?");
     $stmt->bind_param("s", $nome);
     $stmt->execute();

@@ -9,9 +9,9 @@ $result = $conn->query($sql);
 $noticias = [];
 
 if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $noticias[] = $row;
-    }
+  while ($row = $result->fetch_assoc()) {
+    $noticias[] = $row;
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -34,34 +34,30 @@ if ($result->num_rows > 0) {
   <main class="min-h-screen flex flex-col p-4 ">
     <?php include '../components/navbar.php'; ?>
     <main>
-    <section class="latest-news">
-  <h1>Últimas notícias</h1>
+      <section class="latest-news">
+        <br>
+        <h1>Últimas notícias</h1>
 
-  <?php if (count($noticias) > 0): ?>
-    
-    <?php foreach ($noticias as $row): ?>
-      <div class="conteiner">
+        <?php if (count($noticias) > 0): ?>
 
-        <img src="../pages/colaborador/uploads/<?= $row['imagem'] ?>" width="300">
-
-        <h2><?= $row['titulo'] ?></h2>
-
-        <p><?= $row['conteudo'] ?></p>
-
-        <small><strong>Autor:</strong> <?= $row['autor'] ?></small><br>
-        <small><strong>Data:</strong> <?= $row['data'] ?></small>
-
-      </div>
+          <?php foreach ($noticias as $row): ?>
+            <div class="conteiner">
+              
+      <?php $foto = $row['imagem'];
+      $titulo = $row['titulo'];
+      $descricao = $row['conteudo'];
+      include "../components/noticia.php"; ?>
+       </div>
     <?php endforeach; ?>
-
-  <?php else: ?>
-    <p>Nenhuma notícia cadastrada.</p>
-  <?php endif; ?>
-</section>
+        <?php else: ?>
+          <p>Nenhuma notícia cadastrada.</p>
+        <?php endif; ?>
+      </section>
 
 
     </main>
   </main>
 
 </body>
+
 </html>

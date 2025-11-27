@@ -9,14 +9,15 @@ $result = $conn->query($sql);
 $noticias = [];
 
 if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $noticias[] = $row;
-    }
+  while ($row = $result->fetch_assoc()) {
+    $noticias[] = $row;
+  }
 }
 ?>
 <!-- Pagina inicial -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,54 +28,49 @@ if ($result->num_rows > 0) {
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="stylesheet" href="../components/css/style.css">
-    <link rel="stylesheet" href="../components/css/home.css">
-    <link rel="stylesheet" href="../components/css/noticia.css">
+  <link rel="stylesheet" href="../components/css/style.css">
+  <link rel="stylesheet" href="../components/css/home.css">
+  <link rel="stylesheet" href="../components/css/noticia.css">
 </head>
 
 <body>
   <main class="min-h-screen flex flex-col p-4 ">
     <?php include '../components/navbar.php'; ?>
     <main>
-      <div style="width: 100%; height:400px; background-color: #D0D0D08F;">
+      <div style="width: 100%; height:400px;margin-top:4rem; background-color: #fff;">
         <img src="../img/Frame 2.png" alt="Banner Nite" style="width:100%; height:100%; object-fit:cover;">
       </div>
-    <section class="grid-section">
+      <section class="grid-section">
         <div class="div1"></div>
         <div class="div2"></div>
         <div class="div3"></div>
-    </section>
-    <section class="latest-news">
-      <h1>Últimas notícias</h1>
+      </section>
+      <section class="latest-news">
+        <h1>Últimas notícias</h1>
 
-      <?php if (count($noticias) > 0): ?>
-    
-      <?php foreach ($noticias as $row): ?>
-      <div class="conteiner">
+        <?php if (count($noticias) > 0): ?>
+          <?php foreach ($noticias as $row): ?>
+            <div class="conteiner">
 
-        <img src="../pages/colaborador/uploads/<?= $row['imagem'] ?>" width="300">
+              <?php $foto = $row['imagem'];
+              $titulo = $row['titulo'];
+              $descricao = $row['conteudo'];
+              include "../components/noticia.php"; ?>
+            </div>
+          <?php endforeach; ?>
 
-        <h2><?= $row['titulo'] ?></h2>
-
-        <p><?= $row['conteudo'] ?></p>
-
-        <small><strong>Autor:</strong> <?= $row['autor'] ?></small><br>
-        <small><strong>Data:</strong> <?= $row['data'] ?></small>
-
-      </div>
-      <?php endforeach; ?>
-
-      <?php else: ?>
-     <p>Nenhuma notícia cadastrada.</p>
-      <?php endif; ?>
-    </section>
-</main>
+        <?php else: ?>
+          <p>Nenhuma notícia cadastrada.</p>
+        <?php endif; ?>
+      </section>
+    </main>
+    <div class="mt-4" style="margin-bottom: 4rem;">
       <h2>Sobre nós</h2>
-      <div class="d-flex mt-4 gap-4">
+      <div class="d-flex gap-4">
         <figcaption>
-        <div class="fig">
-          <img src="../img/Group.png" alt="Nite">
-        </div>  
+          <div class="fig">
+            <img src="../img/Group.png" alt="Nite">
+          </div>
         </figcaption>
         <aside>
           <div>
@@ -94,31 +90,13 @@ if ($result->num_rows > 0) {
               <li> Acesso direto a talentos em formação</li>
               <li> Desenvolvimento com metodologia ágil</li>
             </ul>
-        </div>
+          </div>
         </aside>
-    </section>
-              </div>
-              <!-- Rodapé -->
-  <footer class="mt-5 pt-5">
-    <div id="copy-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6" id="msg-box">
-            <p>Nos deixe uma mensagem:</p>
-          </div>
-
-          <div class="col-md-6" id="contact-form">
-              <form action="salvar_mensagem.php" method="POST">
-              <input type="email" class="form-control mb-2" placeholder="E-mail" name="email" required />
-              <input type="text" class="form-control mb-2" placeholder="Assunto" name="subject" required />
-              <textarea class="form-control mb-2" rows="3" placeholder="Sua mensagem..." name="message" required></textarea>
-              <input type="submit" class="btn btn-primary" value="Enviar" />
-            </form>
-          </div>
-        </div>
       </div>
+      </section>
     </div>
-  </footer>
+    <!-- Rodapé -->
+     <?php include '../components/footer.php'; ?>
   </main>
 </body>
 <script src="https://kit.fontawesome.com/f11ceb98c0.js" crossorigin="anonymous"></script>
@@ -127,8 +105,7 @@ if ($result->num_rows > 0) {
 <!-- Parallax-->
 <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-  crossorigin="anonymous"></script>
+  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>
 
 </html>
