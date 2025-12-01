@@ -41,9 +41,18 @@ if ($result->num_rows > 0) {
         <img src="../img/Frame 2.png" alt="Banner Nite" style="width:100%; height:100%; object-fit:cover;">
       </div>
       <section class="grid-section">
-        <div class="div1"></div>
-        <div class="div2"></div>
-        <div class="div3"></div>
+        <div class="div1">
+          <img src="../img/Notícia 1.jpg" alt="imagem 1">
+        </div>
+        <div class="div2">
+          <img src="../img/Notícia 2.jpg" alt="imagem 2">
+        </div>
+        <div class="div3">
+          <img src="../img/Notícia 3.jpg" alt="imagem 3">
+        </div>
+        <div class="div4">
+          <img src="../img/Notícia 4.jpg" alt="imagem 4">
+          </div>
       </section>
       <section class="latest-news">
         <h1>Últimas notícias</h1>
@@ -96,7 +105,27 @@ if ($result->num_rows > 0) {
       </section>
     </div>
     <!-- Rodapé -->
-     <?php include '../components/footer.php'; ?>
+    <footer class="mt-5 pt-5">
+      <div id="copy-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6" id="msg-box">
+              <p>Nos deixe uma mensagem:</p>
+            </div>
+
+            <div class="col-md-6" id="contact-form">
+              <form action="salvar_mensagem.php" method="POST">
+                <input type="email" class="form-control mb-2" placeholder="E-mail" name="email" required />
+                <input type="text" class="form-control mb-2" placeholder="Assunto" name="subject" required />
+                <textarea class="form-control mb-2" rows="3" placeholder="Sua mensagem..." name="message"
+                  required></textarea>
+                <input type="submit" class="btn btn-primary" value="Enviar" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 </body>
 <script src="https://kit.fontawesome.com/f11ceb98c0.js" crossorigin="anonymous"></script>

@@ -1,13 +1,15 @@
-<?php
+<?php 
 session_start();
-include("../conexao.php"); // ajuste o caminho se necessário
+include("../conexao.php");
+
+$erro = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $nome = $_POST['nome'];
     $senhaDigitada = $_POST['senha'];
 
-   
+    // Consulta segura
     $stmt = $conn->prepare("SELECT id, nome, senha FROM tbadmin WHERE nome = ?");
     $stmt->bind_param("s", $nome);
     $stmt->execute();
@@ -15,16 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($resultado->num_rows === 1) {
         $admin = $resultado->fetch_assoc();
-
+        
         if ($senhaDigitada === $admin['senha']) {
 
+            // Salva informações na sessão
             $_SESSION['id'] = $admin['id'];
             $_SESSION['nome'] = $admin['nome'];
-            $_SESSION['tipo'] = "admin";
+            $_SESSION['tipo'] = "admin"; // <<< AQUI MARCA COMO ADMINISTRADOR
 
-            header("Location: admin/gestao.php"); // Página exclusiva admin
+            header("Location: admin/gestao.php");
             exit;
+        } else {
+            $erro = "Senha incorreta!";
         }
+    } else {
+        $erro = "Administrador não encontrado!";
     }
 }
 ?>

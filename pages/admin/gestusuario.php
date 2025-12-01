@@ -1,3 +1,11 @@
+ <?php
+session_start();
+
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== "admin") {
+    echo "Acesso negado. Apenas administradores podem acessar esta página.";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,6 +22,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <title>Gerenciar Usuários</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">

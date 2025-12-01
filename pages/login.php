@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../conexao.php"); // ajuste o caminho se necessário
+include("../conexao.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($resultado->num_rows === 1) {
         $usuario = $resultado->fetch_assoc();
 
-        // 🔓 Comparação SEM HASH
         if ($senhaDigitada === $usuario['senha']) {
 
             // Criar sessão

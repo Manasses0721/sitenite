@@ -12,6 +12,15 @@ $stmt->execute();
 $result = $stmt->get_result();
 $usuario = $result->fetch_assoc();
 ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['tipo']) || $_SESSION['tipo'] !== "admin") {
+    echo "Acesso negado. Apenas administradores podem acessar esta página.";
+    exit;
+}
+?>
+
     <meta charset="UTF-8">
     <title>Editar Usuário</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
